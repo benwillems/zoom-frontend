@@ -1,0 +1,16 @@
+{
+  "dateOptions": {
+    "year": "numeric",
+    "month": "long",
+    "day": "numeric",
+    "hour": "2-digit",
+    "minute": "2-digit",
+    "second": "2-digit"
+  },
+  "fontSize": 12,
+  "startY": 8,
+  "lineHeight": 6,
+  "sectionTitleSpacing": 5,
+  "contentWidth": 180,
+  "sectionSpacing": 2
+}

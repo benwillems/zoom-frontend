@@ -1,0 +1,58 @@
+[
+  {
+    "value": "Pacific/Honolulu",
+    "label": "Hawaii Standard Time (Honolulu)"
+  },
+  {
+    "value": "America/Adak",
+    "label": "Hawaii-Aleutian Daylight Time (Adak)"
+  },
+  {
+    "value": "America/Anchorage",
+    "label": "Alaska Daylight Time (Anchorage)"
+  },
+  {
+    "value": "America/Los_Angeles",
+    "label": "Pacific Daylight Time (Los Angeles)"
+  },
+  {
+    "value": "America/Phoenix",
+    "label": "Mountain Standard Time (Phoenix)"
+  },
+  {
+    "value": "America/Denver",
+    "label": "Mountain Daylight Time (Salt Lake City)"
+  },
+  {
+    "value": "America/Chicago",
+    "label": "Central Daylight Time (Chicago)"
+  },
+  {
+    "value": "America/New_York",
+    "label": "Eastern Daylight Time (New York)"
+  },
+  {
+    "value": "America/St_Johns",
+    "label": "Newfoundland Daylight Time (Newfoundland)"
+  },
+  {
+    "value": "America/Halifax",
+    "label": "Atlantic Daylight Time (Halifax)"
+  },
+  {
+    "value": "America/Winnipeg",
+    "label": "Central Daylight Time (Winnipeg)"
+  },
+  {
+    "value": "America/Regina",
+    "label": "Central Standard Time (Regina)"
+  },
+  {
+    "value": "America/Edmonton",
+    "label": "Mountain Daylight Time (Edmonton)"
+  },
+  {
+    "value": "America/Vancouver",
+    "label": "Pacific Daylight Time (Vancouver)"
+  }
+]

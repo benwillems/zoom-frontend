@@ -1,0 +1,227 @@
+{
+  "overview": {
+    "metrics": {
+      "mentionRate": {
+        "title": "Mention Rate",
+        "value": "75%",
+        "change": 12,
+        "isPositive": true,
+        "displayIcon": true
+      },
+      "conversionRate": {
+        "title": "Conversion Rate",
+        "value": "15.0%",
+        "change": 8,
+        "isPositive": true,
+        "displayIcon": true
+      },
+      "revenueGenerated": {
+        "title": "Revenue Generated",
+        "value": "$15,780",
+        "change": 15,
+        "isPositive": true,
+        "displayIcon": true
+      },
+      "potentialRevenueLoss": {
+        "title": "Potential Revenue Loss",
+        "value": "$8,420",
+        "change": -5,
+        "isPositive": false,
+        "displayIcon": true
+      }
+    },
+    "actionInsights": [
+      "Conduct training sessions on effective creatine introduction techniques, focusing on the most successful conversation entry points",
+      "Develop a comprehensive FAQ document addressing common safety and cost concerns, backed by scientific evidence",
+      "Create targeted bundle deals at the $34.99 price point to maximize conversion rates",
+      "Implement a systematic follow-up strategy for interested clients, including personalized goal-setting sessions",
+      "Develop a mentorship program pairing top-performing nutritionists with those who have lower mention and conversion rates"
+    ]
+  },
+  "mentions": {
+    "topNutritionists": [
+      {
+        "name": "Alice Johnson",
+        "mentionRate": 95,
+        "conversionRate": 22,
+        "revenueGenerated": 5240,
+        "totalCalls": 150,
+        "successfulMentions": 142,
+        "averageResponseRate": 88
+      },
+      {
+        "name": "Bob Smith",
+        "mentionRate": 92,
+        "conversionRate": 20,
+        "revenueGenerated": 4890,
+        "totalCalls": 145,
+        "successfulMentions": 133,
+        "averageResponseRate": 85
+      },
+      {
+        "name": "Carol Williams",
+        "mentionRate": 88,
+        "conversionRate": 18,
+        "revenueGenerated": 4120,
+        "totalCalls": 138,
+        "successfulMentions": 121,
+        "averageResponseRate": 82
+      }
+    ],
+    "entryPoints": [
+      {
+        "point": "Goal Discussion",
+        "effectiveness": 85,
+        "totalUses": 450,
+        "successRate": 72,
+        "averageConversion": 35
+      },
+      {
+        "point": "Supplement Review",
+        "effectiveness": 78,
+        "totalUses": 380,
+        "successRate": 68,
+        "averageConversion": 32
+      },
+      {
+        "point": "Progress Check",
+        "effectiveness": 72,
+        "totalUses": 320,
+        "successRate": 65,
+        "averageConversion": 30
+      },
+      {
+        "point": "Routine Analysis",
+        "effectiveness": 68,
+        "totalUses": 290,
+        "successRate": 62,
+        "averageConversion": 28
+      }
+    ],
+    "monthlyTrends": {
+      "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+      "mentionRates": [75, 78, 82, 85, 88, 92],
+      "conversionRates": [18, 19, 20, 22, 23, 25],
+      "revenue": [3800, 4200, 4600, 4900, 5200, 5500]
+    }
+  },
+  "discussions": {
+    "positiveResponses": [
+      {
+        "phrase": "Interest in Muscle Gain",
+        "count": 145,
+        "conversions": 89,
+        "revenue": 3560,
+        "commonFollowUp": "Scientific Benefits Discussion"
+      },
+      {
+        "phrase": "Previous Success",
+        "count": 98,
+        "conversions": 72,
+        "revenue": 2880,
+        "commonFollowUp": "Personalized Recommendation"
+      },
+      {
+        "phrase": "Trust in Science",
+        "count": 85,
+        "conversions": 65,
+        "revenue": 2600,
+        "commonFollowUp": "Study References"
+      }
+    ],
+    "negativeResponses": [
+      {
+        "phrase": "Cost Concerns",
+        "count": 68,
+        "commonObjection": "Too expensive",
+        "successfulRebuttals": 28,
+        "recommendedResponse": "Value Comparison"
+      },
+      {
+        "phrase": "Safety Concerns",
+        "count": 58,
+        "commonObjection": "Side effects",
+        "successfulRebuttals": 32,
+        "recommendedResponse": "Scientific Evidence"
+      },
+      {
+        "phrase": "Skepticism",
+        "count": 42,
+        "commonObjection": "Unsure of benefits",
+        "successfulRebuttals": 25,
+        "recommendedResponse": "Case Studies"
+      }
+    ],
+    "effectiveDiscussionTechniques": [
+      {
+        "technique": "Scientific Explanation",
+        "successRate": 85,
+        "averageConversion": 42,
+        "bestContext": "Initial Introduction"
+      },
+      {
+        "technique": "Personal Experience Stories",
+        "successRate": 78,
+        "averageConversion": 38,
+        "bestContext": "Objection Handling"
+      },
+      {
+        "technique": "Benefits Comparison",
+        "successRate": 72,
+        "averageConversion": 35,
+        "bestContext": "Value Discussion"
+      }
+    ],
+    "responseTimeline": {
+      "labels": ["Week 1", "Week 2", "Week 3", "Week 4"],
+      "positive": [45, 52, 58, 62],
+      "negative": [32, 28, 25, 22],
+      "neutral": [23, 20, 17, 16]
+    }
+  },
+  "sales": {
+    "monthlyBreakdown": {
+      "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+      "revenue": [12500, 13200, 14100, 14800, 15500, 15780],
+      "units": [250, 264, 282, 296, 310, 316],
+      "averageOrderValue": [50, 50, 50, 50, 50, 50]
+    },
+    "topPerformers": [
+      {
+        "name": "Alice Johnson",
+        "totalSales": 158,
+        "revenue": 7900,
+        "averageOrderValue": 50,
+        "conversionRate": 22
+      },
+      {
+        "name": "Bob Smith",
+        "totalSales": 142,
+        "revenue": 7100,
+        "averageOrderValue": 50,
+        "conversionRate": 20
+      }
+    ],
+    "customerSegments": [
+      {
+        "segment": "First-time Buyers",
+        "percentage": 45,
+        "averageOrderValue": 48,
+        "retentionRate": 65
+      },
+      {
+        "segment": "Repeat Customers",
+        "percentage": 55,
+        "averageOrderValue": 52,
+        "retentionRate": 85
+      }
+    ],
+    "conversionFunnel": {
+      "totalProspects": 1000,
+      "initialInterest": 750,
+      "productDiscussion": 500,
+      "intentToPurchase": 300,
+      "completed": 150
+    }
+  }
+}

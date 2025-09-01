@@ -1,0 +1,223 @@
+{
+  "pipelines": [
+    {
+      "stages": [
+        {
+          "id": "e4edbf36-49f8-4f89-aa06-6e21fd87b823",
+          "name": "Welcome",
+          "position": 0,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "f990b080-25a3-4eef-a52e-bd6f4344f1d9",
+          "name": "Future",
+          "position": 1,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "f2d651ad-0fc8-4a51-ae0a-5957c85ce7de",
+          "name": "Week 1",
+          "position": 2,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "b21cd403-0739-4c06-a624-f853269145d1",
+          "name": "Week 2",
+          "position": 3,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "c9674cd3-52f2-453b-ba54-df0f13f7623e",
+          "name": "Week 3",
+          "position": 4,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "d8f7520b-a3b2-4ea7-b485-e7c0b7a290b0",
+          "name": "Week 4",
+          "position": 5,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "cf51f31b-aedc-43ff-8929-2301b838da56",
+          "name": "Week 5",
+          "position": 6,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "1705b0b9-4ecf-4c7a-b941-41c3b7c0b26d",
+          "name": "Week 6",
+          "position": 7,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "27606ec5-9749-4812-95c6-5ac3e377a3a3",
+          "name": "Active",
+          "position": 8,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "8138ba1a-9f48-42c3-b42c-a21588e21934",
+          "name": "Check in 1",
+          "position": 9,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "54bdccbe-7de8-4775-8149-da093add5e19",
+          "name": "Check in 2",
+          "position": 10,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "cb64fd07-429c-4155-b01d-9e75ed497034",
+          "name": "Red Alert",
+          "position": 11,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "ae0d3b89-bd04-4c3c-9fb1-7ec3c7efcec8",
+          "name": "Cancel Requested",
+          "position": 12,
+          "showInFunnel": true,
+          "showInPieChart": true
+        }
+      ],
+      "dateAdded": "2023-09-26T16:49:00.172Z",
+      "dateUpdated": "2024-10-30T18:13:38.253Z",
+      "name": "Member Pipeline",
+      "showInFunnel": true,
+      "showInPieChart": true,
+      "id": "JFnB96DatOhaji6okO4Y"
+    },
+    {
+      "stages": [
+        {
+          "id": "69798611-6b51-488b-9d99-a63087d3b93c",
+          "name": "New Lead",
+          "originId": "OWQ1Mzc3YTctNDg3Ni00MDI4LTgxMDMtMTg0MTE2OWYwNDc2",
+          "position": 0,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "901540bd-9d3b-4cc5-99d9-e907ee80155d",
+          "name": "<5 Days",
+          "originId": "NmNlMThkMmQtMmYyNi00YzQxLWFlYjEtMjEwZjNmNmU4OTBh",
+          "position": 1,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "de393f56-addb-41c3-8f8d-8a2ee78ec82c",
+          "name": "6-30 Days",
+          "position": 2,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "7695655c-2a07-462f-ad37-003ed88d5e2d",
+          "name": "> 30 Days",
+          "position": 3,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "1e5cb6a6-34c6-4574-abde-f88a4a8c26a3",
+          "name": "Follow Up",
+          "position": 4,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "92ecd1d6-3feb-45f9-8dd2-d19217545c32",
+          "name": "Scheduled",
+          "originId": "Yzg4NDExYmUtMDk5MS00NTNhLThlYzEtMWFhMTMyYWQ2ZTI0",
+          "position": 5,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "c48af33c-fcd1-4494-a2c4-9f5399aa0566",
+          "name": "Reschedule",
+          "originId": "MmE1NGJmNWYtNTQ1Ni00NzJiLTg1MDAtODJiOTdiOTI3MWUx",
+          "position": 6,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "e96a626f-d20a-4355-a1c0-c7db26d41722",
+          "name": "Promo",
+          "position": 7,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "6d6de2cc-4a7c-4043-93d9-0f7a13e411a6",
+          "name": "Referral",
+          "position": 8,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "850aa82c-a16e-4132-a056-cfee8266bbc1",
+          "name": "Weekly Wins",
+          "originId": "MDQ2MTIzOTUtYjdhNC00NTg5LWI2NDItYWYzZDMzNTczNjZi",
+          "position": 9,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "416be8d1-0e5b-4798-87a3-54097a60d64b",
+          "name": "Maybe",
+          "originId": "ODMxNjNiNWQtOTQ3OS00NDNhLWIwMjEtZmUxY2RkNWIyNmM4",
+          "position": 10,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "b0f036c2-e318-482e-a972-b41798ce9ef2",
+          "name": "No",
+          "originId": "ZGYwOGE2ZmItZmJhNC00ZWY5LTk1ODQtZDk4ODZhZTc3MWZj",
+          "position": 11,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "b48f79e3-4f87-4a8d-80f6-c144302772b5",
+          "name": "Do Not Disturb",
+          "originId": "N2FkZDFkMTMtYWE4OC00ZDc0LWFkOWYtNTBjZGNkNzllNTVk",
+          "position": 12,
+          "showInFunnel": true,
+          "showInPieChart": true
+        },
+        {
+          "id": "440780a0-fdf6-48f3-8803-d5bb3f346f05",
+          "name": "Archived Wins",
+          "position": 13,
+          "showInFunnel": true,
+          "showInPieChart": true
+        }
+      ],
+      "dateAdded": "2023-04-20T22:51:44.648Z",
+      "dateUpdated": "2024-10-30T18:14:43.100Z",
+      "name": "Sales Pipeline",
+      "originId": "LlGr60BuC6qmsCwSXx1A",
+      "showInFunnel": true,
+      "showInPieChart": true,
+      "id": "FtA2drNj8sRWDVHWG2Qp"
+    }
+  ],
+  "traceId": "b8b30c5c-8f07-4541-92a7-d44f8c12f0af"
+}

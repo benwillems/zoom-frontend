@@ -1,8 +1,10 @@
 import { withApiAuthRequired, getSession } from '@auth0/nextjs-auth0'
 
 export default withApiAuthRequired(async function logout(req, res) {
+  console.log('Logout API called') 
   try {
     const session = await getSession(req, res)
+    console.log('Session found:', !!session)
    // if (session) {
       res.setHeader(
         'Set-Cookie',

@@ -5,7 +5,7 @@ export default withApiAuthRequired(async function logout(req, res) {
   try {
     const session = await getSession(req, res)
     console.log('Session found:', !!session)
-   // if (session) {
+   // if (session) { //Debug
       res.setHeader(
         'Set-Cookie',
         'appSession=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure; SameSite=Lax'

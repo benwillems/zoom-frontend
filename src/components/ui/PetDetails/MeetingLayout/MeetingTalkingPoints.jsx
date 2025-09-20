@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { FaCheckSquare, FaExpand, FaCompress, FaChevronLeft, FaChevronRight, FaChevronDown, FaChevronUp } from 'react-icons/fa'
+import { FaCheckSquare, FaExpand, FaCompress, FaChevronLeft, FaChevronRight, FaChevronDown, FaChevronUp, FaComments } from 'react-icons/fa'
 import { MdCheck, MdRadioButtonUnchecked } from 'react-icons/md'
 import { BiRefresh, BiX } from 'react-icons/bi'
 import useAudioStore from '@/store/useAudioStore'
+import TalkingPointTemplateSelect from '@/components/ui/common/TalkingPointTemplateSelect'
 
 const MeetingTalkingPoints = ({ clientDetails, initiallyExpanded = false, isClientDetailsExpanded = false }) => {
   const { activeAppointment, viewLayout } = useAudioStore()
@@ -18,6 +19,8 @@ const MeetingTalkingPoints = ({ clientDetails, initiallyExpanded = false, isClie
   const [componentWidth, setComponentWidth] = useState(null)
   const [initialRender, setInitialRender] = useState(true)
   const [collapsedCategories, setCollapsedCategories] = useState({})
+  const [selectedTemplateId, setSelectedTemplateId] = useState(null)
+  const [showTemplateSelector, setShowTemplateSelector] = useState(false)
   
   // Helper function to recursively parse any nested structure
   const parseNestedData = (data, path = '') => {
@@ -251,7 +254,10 @@ const MeetingTalkingPoints = ({ clientDetails, initiallyExpanded = false, isClie
       if (isCancelled) return
       
       try {
-        const payload = { appointmentId: activeAppointment.id }
+        const payload = { 
+          appointmentId: activeAppointment.id,
+          ...(selectedTemplateId && { templateId: selectedTemplateId })
+        }
         const response = await fetch(`/api/talkingPoints/generate`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -485,44 +491,61 @@ const MeetingTalkingPoints = ({ clientDetails, initiallyExpanded = false, isClie
       style={!isExpanded && componentWidth ? { width: componentWidth } : {}}
     >
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-3 border-b shadow-sm flex-shrink-0">          
-        <div className="flex items-center justify-between">
-          <div className={`flex-1 min-w-0 flex items-center ${isCollapsed ? 'hidden' : ''}`}>
-            <div>
-              <h2 className="text-lg font-semibold truncate">💬 Talking Points</h2>
-              <p className="text-sm opacity-90 truncate">{clientDetails?.name}</p>
+      <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white border-b shadow-sm flex-shrink-0">
+        <div className="p-3">        
+          <div className="flex items-center justify-between">
+            <div className={`flex-1 min-w-0 flex items-center ${isCollapsed ? 'hidden' : ''}`}>
+              <div>
+                <div className="flex items-center space-x-2">
+                  <h2 className="text-lg font-semibold truncate">💬 Talking Points Test</h2>
+                  {selectedTemplateId && (
+                    <span className="px-2 py-1 bg-blue-500 bg-opacity-30 rounded-full text-xs font-medium">
+                      Custom Template
+                    </span>
+                  )}
+                </div>
+                <p className="text-sm opacity-90 truncate">{clientDetails?.name}</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-2">
+              {!isCollapsed && (
+                <>
+                  <button
+                    onClick={() => setShowTemplateSelector(!showTemplateSelector)}
+                    className="p-2 hover:bg-blue-500 rounded-full transition-colors"
+                    title="Template selector"
+                  >
+                    <FaComments className="text-white text-sm" />
+                  </button>
+                  <button
+                    onClick={fetchTalkingPoints}
+                    disabled={loading}
+                    className="p-2 hover:bg-blue-500 rounded-full transition-colors"
+                    title="Refresh"
+                  >
+                    <BiRefresh className={`text-white text-lg ${loading ? 'animate-spin' : ''}`} />
+                  </button>
+                </>
+              )}
             </div>
           </div>
-          
-          <div className="flex items-center space-x-2">
-            {!isCollapsed && (
-              <>
-                <button
-                  onClick={fetchTalkingPoints}
-                  disabled={loading}
-                  className="p-2 hover:bg-blue-500 rounded-full transition-colors"
-                  title="Refresh"
-                >
-                  <BiRefresh className={`text-white text-lg ${loading ? 'animate-spin' : ''}`} />
-                </button>
-                {/* <button
-                  onClick={toggleExpand}
-                  className="p-2 hover:bg-blue-500 rounded-full transition-colors"
-                  title={isExpanded ? "Minimize" : "Expand"}
-                >
-                  {isExpanded ? <FaCompress className="text-white text-sm" /> : <FaExpand className="text-white text-sm" />}
-                </button> */}
-              </>
-            )}
-            {/* <button
-              onClick={toggleCollapse}
-              className="p-2 hover:bg-blue-500 rounded-full transition-colors"
-              title={isCollapsed ? "Expand" : "Collapse"}
-            >
-              {isCollapsed ? <FaChevronLeft className="text-white text-sm" /> : <FaChevronRight className="text-white text-sm" />}
-            </button> */}
-          </div>
         </div>
+        
+        {/* Template Selector */}
+        {!isCollapsed && showTemplateSelector && (
+          <div className="px-3 pb-3 bg-blue-600 border-t border-blue-500">
+            <TalkingPointTemplateSelect
+              selectedTemplateId={selectedTemplateId}
+              onTemplateChange={(templateId) => {
+                setSelectedTemplateId(templateId);
+                // Optionally auto-refresh talking points when template changes
+                fetchTalkingPoints();
+              }}
+              className="mt-2"
+            />
+          </div>
+        )}
       </div>
 
       {/* Content */}

@@ -625,6 +625,58 @@ const useAudioStore = create((set, get) => ({
       await fetchClientRecords(clientId)
     }
   },
+
+  regenerateNotes: async (appointmentId, templateId = null, clientId = null) => {
+    const { fetchAllAppointments, fetchClientRecords } = useClientStore.getState()
+    set({ isNoteLoading: true })
+
+    try {
+      const payload = { appointmentId }
+      if (templateId) {
+        payload.templateId = templateId
+      }
+
+      const response = await fetchWithAuth('/api/appointment/regenerate-notes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+
+      const data = await response.json()
+      if (response.status !== 200) {
+        throw new Error(data?.error || 'Failed to regenerate notes')
+      }
+
+      addNotification({
+        iconColor: 'green',
+        header: 'Notes regenerated successfully!',
+        description: 'The appointment notes have been regenerated.',
+        icon: CgNotes,
+        hideProgressBar: false,
+        notificationDisplayTimer: 8000,
+      })
+
+      await fetchAllAppointments()
+      if (clientId) {
+        await fetchClientRecords(clientId)
+      }
+
+      return data
+    } catch (error) {
+      console.error('Error regenerating notes:', error)
+      addNotification({
+        iconColor: 'red',
+        header: 'Failed to regenerate notes',
+        description: error.message || 'An error occurred while regenerating notes',
+        icon: MdWarning,
+        hideProgressBar: false,
+        notificationDisplayTimer: 10000,
+      })
+      throw error
+    } finally {
+      set({ isNoteLoading: false })
+    }
+  },
 }))
 
 export default useAudioStore

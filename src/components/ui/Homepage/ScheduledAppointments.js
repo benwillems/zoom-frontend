@@ -8,6 +8,7 @@ import {
 import useClientStore from '@/store/clientStore'
 import { CgNotes } from 'react-icons/cg'
 import useAudioStore from '@/store/useAudioStore'
+import { BiRefresh } from 'react-icons/bi'
 import {
   FaArrowsSpin,
   FaMicrophoneLines,
@@ -108,6 +109,8 @@ const ScheduledAppointments = ({ searchTerm, selectedStatuses }) => {
     setIsSchedule,
     pauseRecording,
     setNoAppointmentsForTheDay,
+    regenerateNotes,
+    templateId,
   } = useAudioStore()
 
   const [openMultiClientModal, setOpenMultiClientModal] = useState(false)
@@ -235,6 +238,17 @@ const ScheduledAppointments = ({ searchTerm, selectedStatuses }) => {
       setAppointmentNote(null)
     }
     setIsSchedule(false)
+  }
+
+  const handleRegenerateNotes = async (e, appointment) => {
+    e.stopPropagation() // Prevent the appointment from being selected
+    try {
+      await regenerateNotes(appointment.id, templateId, appointment.client?.id)
+      // Refresh appointments list to show updated status
+      await fetchAllAppointments()
+    } catch (error) {
+      console.error('Error regenerating notes:', error)
+    }
   }
 
   let displayIcons = status => {
@@ -365,6 +379,16 @@ const ScheduledAppointments = ({ searchTerm, selectedStatuses }) => {
                     </span>
                   </button>
                    )}
+                {appointment?.status === 'FAILED' && (
+                  <button
+                    onClick={e => handleRegenerateNotes(e, appointment)}
+                    className="bg-red-500 hover:bg-red-600 text-white px-2 py-1 text-xs rounded mt-1 flex items-center space-x-1 transition-colors"
+                    title="Regenerate notes for this failed appointment"
+                  >
+                    <BiRefresh className="text-sm" />
+                    <span className="hidden sm:block">Regenerate</span>
+                  </button>
+                )}
                 </div>
               
             </div>
